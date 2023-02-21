@@ -1,49 +1,43 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-export default function User({ name, email, phone, address, href, id,}) {
+export default function User({ name, email, phone, address, id,}) {
 
-  const [userid, setUserId] = useState([]);
+  const [userData, setUserData] = useState({});
   const [error, setError] = useState('');
   const [loading,setLoading] = useState(false);
 
-  // const onClick=(e)=>{
-  //    e.preventDefault();
-  //   userListHandle(e.target.value);
-
-  // }
+  
 
   const handleClick = async () => {
    
     try {
-      const userData = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
-      setUserId(userData.data);
-      //setLoading(false);
+      setLoading(true);
+      const user = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`)
+      setUserData(user.data);
+      setLoading(false);
     }
     catch (error) {
       setError(error.message);
-      setLoading(true);
+      setLoading(false);
       
     }
 
   }
 
-  console.log({...userid});
-
- 
-
+  console.log({...userData});
 
   useEffect(() => {
-   setUserId(null);
+   setUserData(null);
 
   }, []);
 
-  // if(loading){
-  //   return <p>Loading...</p>
-  // }
+  if(loading){
+    return <h1>Loading...</h1>
+  }
 
   if (error) {
     console.log(error);
-    return <p>Loading...</p>
+    return <p>Error: {error}</p>
   }
 
   return (
@@ -63,19 +57,19 @@ export default function User({ name, email, phone, address, href, id,}) {
       </p>
       <hr />
     </div>
-    { userid &&
+    { userData &&
    (<div>
       <p>
-        <strong >Name:</strong> {userid.name}
+        <strong >Name:</strong> {userData.name}
       </p>
       <p>
        {/* <strong>City:</strong> {userid.address.city} */}
       </p>
       <p>
-        <strong>Phone:</strong> {userid.phone}
+        <strong>Phone:</strong> {userData.phone}
       </p>
       <p>
-        <strong>Email:</strong> {userid.email}
+        <strong>Email:</strong> {userData.email}
       </p>
       <hr />
     </div>)
