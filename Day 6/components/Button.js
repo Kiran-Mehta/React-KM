@@ -4,7 +4,7 @@ import './Button.css'
 export default function Button({ onClick, label, length, }) {
   return (
     <button className="btn success" type="button" onClick={onClick}>
-    {label} {length}
+    {label} {`(${length})`}
     </button>
   );
 }

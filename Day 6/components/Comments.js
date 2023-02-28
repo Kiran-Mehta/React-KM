@@ -3,7 +3,7 @@ import './Button.css'
 
 
 //display only , accept array
-export default function Comments({ comments }) {
+export default function Comments({ comments, onClick }) {
     return (
         <div>
             { comments.map(comment => (
