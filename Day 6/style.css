@@ -1,0 +1,31 @@
+.page-numbers{
+    display: flex;
+    justify-content: center;
+  }
+
+.page-numbers ul{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0px;
+  padding: 10px;
+}
+
+.page-number-list{
+   padding: 10px 15px;
+   border: 1px solid gray;
+   border-radius: 50%;
+   cursor: pointer;
+   text-decoration: none;
+   margin: 3px;
+}
+
+.page-numbers a:link{
+    text-decoration: none;
+}
+
+.active{
+  color: green;
+}
+
