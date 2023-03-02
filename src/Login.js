@@ -1,23 +1,15 @@
+export const Login = () => {
+    localStorage.setItem("isAuthenticated", true);
+}
 
-const LoginForm = () =>{
+export const Logout = () => {
+    localStorage.setItem("isAuthenticated", false);
+}
 
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-
-    const handleSubmit = () =>{
-        email.preventdefault();
-
+export const isLogin = () => {
+    if (localStorage.getItem("isAuthenticated", true)) {
+        return true;
     }
 
-    return(
-        <form onSubmit = {handleSubmit}>
-            <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
-
-            <input type="password" name="password" placeholder="Password" value={password} onChange={(e)=>setPassword(e.target.value)}/>
-
-            <button type="submit">Sign In</button>
-
-        </form>
-    )
-
+    return false;
 }

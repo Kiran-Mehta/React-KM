@@ -13,7 +13,7 @@ const TodoCallBack =()=> {
 
     const handleTodoList = useCallback(() => {
         setTodos((prev) => [ ...prev, 'New Todo task']);
-    },[todos])
+    },[])
    
 
     return(

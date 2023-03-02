@@ -5,15 +5,25 @@ import ChildData from "./ChildData";
 import ChildComponent from "./ChildComponent";
 import DisplayTime from "./DisplayTime";
 import Counter from "./Counter";
-import ReactForm from './components/Form'
+import ReactForm from "./components/Form";
 import UserList from "./UserList";
-import CountEffect from "./CountEffect"
+import CountEffect from "./CountEffect";
 import CounterReduce from "./CounterReduce";
 import TodoWithCount from "./callBackHooks/TodoWithCount";
 import TodoCallBack from "./callBackHooks/TodoCallBack";
 import ReferenceCount from "./ReferenceCount";
 import ReferenceInput from "./ReferenceInput";
-import { Router, Routes, Route, useNavigate, MemoryRouter, BrowserRouter } from 'react-router-dom'
+import {
+  Router,
+  Routes,
+  Route,
+  useNavigate,
+  MemoryRouter,
+  BrowserRouter,
+} from "react-router-dom";
+import UseAuthentication from "./UseAuthentication";
+import UseMemo from "./UseMemo";
+import AccessingElement from "./AccessingElement";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -54,17 +64,21 @@ export default function App() {
       {/* <UserList/> */}
 
       {/* <CountEffect/> */}
-
-      {/* <TodoWithCount/> */}
+      {/* 
+      <TodoWithCount/> */}
 
       {/* <TodoCallBack/> */}
+
+      {/* <UseMemo/> */}
+
+      {/* <AccessingElement/> */}
       {/* <ReferenceCount/> */}
 
       {/* <ReferenceInput/> */}
       {/* <Router> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/ChildData"  exact  element={<ChildData />} ></Route>
+
+      {/* <Routes>
+          <Route path="/ChildData/:id"  exact  element={<ChildData />} ></Route>
           <Route path="/ChildComponent" exact element={<ChildComponent count={count} onClick={handleCount} />}></Route>
           <Route path="/display-time" exact element={<DisplayTime />}></Route>
           <Route path="/counter" exact element={<Counter />}></Route>
@@ -79,11 +93,14 @@ export default function App() {
             
           </Route>
           
-        </Routes>
-        </BrowserRouter>
-        {/* <button onClick={handleClick}>Back to Home</button> */}
+        </Routes> */}
+
+      <UseAuthentication />
+
+      {/* <button onClick={handleClick}>Back to Home</button> */}
       {/* </Router> */}
-      
     </div>
   );
 }
+
+// 2 march: redability of code, finding the why part in useCallBack and useMemo, few route related examples, nested route.

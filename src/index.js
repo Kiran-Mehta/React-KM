@@ -9,8 +9,8 @@ const root = createRoot(rootElement);
 
 root.render(
   // <MemoryRouter>
-  //  <BrowserRouter> 
+   <BrowserRouter> 
     <App />
-  //  </BrowserRouter> 
+    </BrowserRouter> 
   // </MemoryRouter>
 );
