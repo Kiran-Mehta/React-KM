@@ -1,25 +1,17 @@
+import { Fragment } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { isLogin } from "../Login";
 
-const PrivateRoute = ({ children, ...rest }) => {
+const PrivateRoute = ({ children:Children, Component, ...rest }) => {
+  console.log(Children, "child data goes here");
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
-  // return isAuthenticated ? (
-  //   <Routes>
-  //     <Route {...rest} element={<children />} />
-  //   </Routes>
-  // ) : (
-  //   <Navigate to="/signin" />
-  // );
-
+  
   return(
-    <Routes>
-    <Route
-      {...rest}
-      render={(props) =>
-        isLogin ? (children) : (<Navigate to="/signin" />)
-      }
-    />
-  </Routes>
+         <>
+         {
+          true? (<Component/>): (<Navigate to = "/signin" />)
+         }
+         </>
   )
 };
 

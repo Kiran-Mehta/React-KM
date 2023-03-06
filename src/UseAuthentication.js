@@ -38,7 +38,9 @@ const UseAuthentication = () => {
       <Link to="/dashboard">Dashboard</Link>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route
+        <Route path="/signin" element={<SignIn />} />
+        {/* <Route path="/dashboard" element={<DashBoard />} /> */}
+        {/* {/* <Route
           path="/signin"
           exact
           element={
@@ -46,15 +48,15 @@ const UseAuthentication = () => {
               <SignIn onLogin={handleLogin}/>
             </PublicRoute>
           }
-        />
-        <Route
+        /> */}
+         <Route
           path="/dashboard"
           element={
-            <PrivateRoute>
-              <DashBoard />
+            <PrivateRoute Component={DashBoard}>
+              
             </PrivateRoute>
           }
-        />
+        /> 
         <Route
           path="/about"
           element={
@@ -62,7 +64,7 @@ const UseAuthentication = () => {
               <About />
             </PublicRoute>
           }
-        />
+        /> 
       </Routes>
     </div>
   );
