@@ -1,7 +1,8 @@
 import { useReducer } from "react";
 import "./styles.css";
 
-const initialState = {count: 0
+const initialState = {
+  count: 0
 };
 
 function reducer(state, action) {

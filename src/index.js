@@ -1,16 +1,18 @@
-import { StrictMode } from "react";
+//import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, MemoryRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import {Provider} from "react-redux";
 
 import App from "./App";
+import store from "./store/Store";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
-  // <MemoryRouter>
-   <BrowserRouter> 
+  <Provider store = {store}>
+  <BrowserRouter>
     <App />
-    </BrowserRouter> 
-  // </MemoryRouter>
+  </BrowserRouter>
+  </Provider>
 );

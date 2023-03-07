@@ -1,16 +1,20 @@
-import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { decrement, increment } from './reducers/CountReducer'
 
-export default function ChilDComponent({ count, onClick }) {
-  const [childCount, setChildCount] = useState(count);
-
-  useEffect(() => {
-    setChildCount(count);
-  }, [count]);
+export default function ChilDComponent() {
+ 
+  const count = useSelector((state) => state.counter.count);
+  const dispatch = useDispatch();
 
   return (
     <div className="">
-      <button type="button" onClick={onClick}>
-        {childCount}
+     
+      <button  onClick={() => dispatch(increment())}>
+        Increment
+      </button>
+      <span>{count}</span>
+      <button  onClick={() => dispatch(decrement())}>
+        Decrement
       </button>
     </div>
   );
