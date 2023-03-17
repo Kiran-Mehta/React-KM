@@ -28,10 +28,10 @@ function UseMemo() {
    
     return (
       <div>
-        <h1>{msg}</h1>
+        {/* <h1>{msg}</h1> */}
         {/* <h1>{reverseMsg}</h1> */}
         <h1>{reverseMsg}</h1>
-        <button onClick={() => setMsg("Hello")}>Change Msg</button>
+        <button onClick={() => setMsg("world")}>Change Msg</button>
       </div>
     );
   }

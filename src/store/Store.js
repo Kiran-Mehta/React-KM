@@ -5,7 +5,8 @@ import CountReducer from '../reducers/CountReducer';
 
 const store = configureStore({
     reducer: {
-      counter: CountReducer
+      counter: CountReducer,
+      //user: userReducer
     }
 });
 
